@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>Tarefas</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Completa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="task : ${tasks}">
+                <td th:text="${task.getId()}"></td>
+                <td th:text="${task.getDescription()}"></td>
+                <td>
+                    <span th:if="${task.getComplete()}">Concluída</span>
+                    <span th:unless="${task.getComplete()}">Pendente</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
