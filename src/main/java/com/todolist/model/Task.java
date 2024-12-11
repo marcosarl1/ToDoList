@@ -1,5 +1,8 @@
 package com.todolist.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Task {
     private int id;
     private String description;
